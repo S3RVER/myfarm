@@ -1,0 +1,46 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ namespacedModel }};
+use App\Http\Requests\{{requestName}};
+use {{ rootNamespace }}Http\Controllers\Controller;
+
+class {{ class }} extends Controller{
+
+    public function index(){
+        $data = {{model}}::all();
+        return view('{{viewFolder}}.index', ['data' => $data]);
+    }
+
+    public function create(){
+        return view('{{viewFolder}}.create');
+    }
+
+    public function store({{requestName}} $request){
+        {{model}}::create($request->all());
+        return redirect()->route('{{routeName}}.index')->with(['success' => 'آیتم با موفقیت ایجاد شد']);
+    }
+
+    public function show($id){
+        $data = {{model}}::findOrFail($id);
+        return view('{{viewFolder}}.show', ['data' => $data]);
+    }
+
+    public function edit($id){
+        $data = {{model}}::findOrFail($id);
+        return view('{{viewFolder}}.edit', ['data' => $data]);
+    }
+
+    public function update({{requestName}} $request, $id){
+        $data = {{model}}::findOrFail($id);
+        $input = $request->all();
+        $data->fill($input)->save();
+        return redirect()->route('{{routeName}}.index')->with(['success' => 'آیتم با موفقیت ویرایش شد']);
+    }
+
+    public function destroy($id){
+        {{model}}::find($id)->delete();
+        return redirect()->route('{{routeName}}.index')->with(['success' => 'آیتم با موفقیت حذف شد']);
+    }
+}
