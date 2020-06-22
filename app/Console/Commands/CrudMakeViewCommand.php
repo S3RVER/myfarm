@@ -32,56 +32,76 @@ class CrudMakeViewCommand extends Command{
     }
 
     public function indexFile($name){
-        $content = '<a href="{{route(\''.$name.'.create\')}}">افزودن</a>
-<table>
-    <thead>
-        <tr>
-            <th>شناسه</th>
-            <th>نام</th>
-            <th>عملیات</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($data as $key => $value)
-        <tr>
-            <td>{{$value->id}}</td>
-            <td>{{$value->username}}</td>
-            <td><a href="{{route(\''.$name.'.edit\', $value->id)}}">ویرایش</a></td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>';
+        $content = '@extends(\'layouts.app\', [\'title\' => \'\', \'heading\' => \'\'])
+@section(\'content\')
+    @include(\'layouts.message\')
+    <a href="{{route(\''.$name.'.create\')}}">افزودن</a>
+    <table>
+        <thead>
+            <tr>
+                <th>شناسه</th>
+                <th>نام</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($data as $key => $value)
+            <tr>
+                <td>{{$value->id}}</td>
+                <td>{{$value->username}}</td>
+                <td>
+                    <a href="{{route(\''.$name.'.edit\', $value->id)}}">ویرایش</a>
+                    {{Form::open([\'route\' => [\''.$name.'.destroy\', $value->id], \'method\' => \'delete\'])}}
+                        {{Form::submit(\'حذف\')}}
+                    {{Form::close()}}
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+@endsection';
     $this->create_folder($content,'index');
     }
 
     public function createFile($name){
-        $content = '{{Form::open([\'route\' => \''.$name.'.store\', \'method\' => \'post\'])}}
-    <div>
-        <label for="username">نام</label>
-        {{Form::text(\'username\', null, [\'class\' => \'\'])}}
-    </div>
-    <div>
-        {{Form::submit(\'ذخیره\')}}
-    </div>
-{{Form::close()}}';
+        $content = '@extends(\'layouts.app\', [\'title\' => \'\', \'heading\' => \'\'])
+@section(\'content\')
+    @include(\'layouts.message\')
+    {{Form::open([\'route\' => \''.$name.'.store\', \'method\' => \'post\'])}}
+        <div>
+            <label for="username">نام</label>
+            {{Form::text(\'username\', null, [\'class\' => \'\'])}}
+        </div>
+        <div>
+            {{Form::submit(\'ذخیره\')}}
+        </div>
+    {{Form::close()}}
+@endsection';
         $this->create_folder($content,'create');
     }
 
     public function editFile($name){
-        $content = '{{Form::open([\'route\' => [\''.$name.'.update\', $data->id], \'method\' => \'put\'])}}
-    <div>
-        <label for="username">نام</label>
-        {{Form::text(\'username\', $data->username, [\'class\' => \'\'])}}
-    </div>
-    <div>
-        {{Form::submit(\'ذخیره\')}}
-    </div>
-{{Form::close()}}';
+        $content = '@extends(\'layouts.app\', [\'title\' => \'\', \'heading\' => \'\'])
+@section(\'content\')
+    @include(\'layouts.message\')
+    {{Form::open([\'route\' => [\''.$name.'.update\', $data->id], \'method\' => \'put\'])}}
+        <div>
+            <label for="username">نام</label>
+            {{Form::text(\'username\', $data->username, [\'class\' => \'\'])}}
+        </div>
+        <div>
+            {{Form::submit(\'ذخیره\')}}
+        </div>
+    {{Form::close()}}
+@endsection';
         $this->create_folder($content,'edit');
     }
 
     public function showFile($name){
-        $content = '';
+        $content = '@extends(\'layouts.app\', [\'title\' => \'\', \'heading\' => \'\'])
+@section(\'content\')
+    @include(\'layouts.message\')
+@endsection';
         $this->create_folder($content,'show');
     }
 

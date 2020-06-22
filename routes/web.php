@@ -5,4 +5,4 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/','HomeController@index')->name('home');
-Route::resource('/market_categories', 'MarketCategoryController');
+Route::resource('/market-categories', 'MarketCategoryController');
