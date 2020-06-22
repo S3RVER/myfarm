@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MarketProductRequest;
+use App\Market_category;
 use App\Market_product;
 
 class MarketProductController extends Controller{
@@ -13,7 +14,12 @@ class MarketProductController extends Controller{
     }
 
     public function create(){
-        return view('market_products.create');
+        $market_category = Market_category::all();
+        $select = [];
+        foreach ($market_category as $key => $value) {
+            $select[$value->id] = $value->title;
+        }
+        return view('market_products.create', ['select' => $select]);
     }
 
     public function store(MarketProductRequest $request){
@@ -28,7 +34,12 @@ class MarketProductController extends Controller{
 
     public function edit($id){
         $data = Market_product::findOrFail($id);
-        return view('market_products.edit', ['data' => $data]);
+        $market_category = Market_category::all();
+        $select = [];
+        foreach ($market_category as $key => $value) {
+            $select[$value->id] = $value->title;
+        }
+        return view('market_products.edit', ['data' => $data, 'select' => $select]);
     }
 
     public function update(MarketProductRequest $request, $id){

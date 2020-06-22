@@ -15,6 +15,12 @@ class CreateMarketProductsTable extends Migration
     {
         Schema::create('market_products', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('image')->nullable();
+            $table->integer('price')->default(0);
+            $table->text('description')->nullable();
+            $table->text('external_link')->nullable();
+            $table->unsignedBigInteger('category_id')->index();
             $table->timestamps();
         });
     }

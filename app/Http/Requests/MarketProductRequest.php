@@ -12,13 +12,15 @@ class MarketProductRequest extends FormRequest{
 
     public function rules(){
         return [
-            // 'username' => 'required',
+            'title' => 'required',
+            'category_id' => 'required',
         ];
     }
 
     public function messages(){
         return [
-            // 'username.required' => 'نام کاربری اجباری میباشد',
+            'title.required' => 'عنوان اجباری میباشد',
+            'category_id.required' => 'دسته بندی اجباری میباشد',
         ];
     }
 }
