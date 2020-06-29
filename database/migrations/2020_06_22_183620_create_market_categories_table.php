@@ -17,6 +17,7 @@ class CreateMarketCategoriesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('subtitle')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }

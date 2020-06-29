@@ -8,7 +8,8 @@ class Market_category extends Model{
 
     protected $fillable = [
         'title',
-        'subtitle'
+        'subtitle',
+        'image_path'
     ];
 
 }

@@ -12,13 +12,15 @@ class MarketCategoryRequest extends FormRequest{
 
     public function rules(){
         return [
-             'title' => 'required',
+            'title' => 'required',
+            'image' => 'image',
         ];
     }
 
     public function messages(){
         return [
-             'title.required' => 'نام کاربری اجباری میباشد',
+             'title.required' => 'عنوان دسته بندی اجباری میباشد',
+            'image.image' => 'فایل انتخابی شما باید عکس باشد'
         ];
     }
 }

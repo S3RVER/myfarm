@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e01b99a3996ec2687c84518d8f9bfb1",
+    "content-hash": "ce184f0b9530528c38b6ea7b0699cbf4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1200,6 +1200,58 @@
                 "storage"
             ],
             "time": "2020-05-18T15:13:39+00:00"
+        },
+        {
+            "name": "mahdimajidzadeh/persianalize",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MahdiMajidzadeh/persianalize.git",
+                "reference": "04ff39fc97b566bd2c3117fc3e67cd069c0aee5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MahdiMajidzadeh/persianalize/zipball/04ff39fc97b566bd2c3117fc3e67cd069c0aee5d",
+                "reference": "04ff39fc97b566bd2c3117fc3e67cd069c0aee5d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.1",
+                "php": "~5.6|~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MahdiMajidzadeh\\Persianalize\\PersianalizeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MahdiMajidzadeh\\Persianalize\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mahdi Majidzadeh",
+                    "email": "mahdi@majidzadeh.ir",
+                    "homepage": "http://majidzadeh.ir",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package for normalize Persian text",
+            "homepage": "https://github.com/MahdiMajidzadeh/Persianalize",
+            "keywords": [
+                "laravel",
+                "normalize",
+                "persian"
+            ],
+            "time": "2017-11-17T15:35:51+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5877,7 +5929,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "mahdimajidzadeh/persianalize": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -14,6 +14,7 @@ class CheckPermission{
     private $abilities = [];
 
     public function handle($request, Closure $next){
+        return $next($request);
         $name = Route::currentRouteName();
         if (empty($this->abilities)) {
             $this->setAbilities(Auth::id());
