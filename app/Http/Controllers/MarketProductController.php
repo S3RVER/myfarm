@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\MarketProductRequest;
 use App\Market_category;
 use App\Market_product;
+use Illuminate\Support\Facades\Storage;
 
 class MarketProductController extends Controller{
 
@@ -23,6 +24,10 @@ class MarketProductController extends Controller{
     }
 
     public function store(MarketProductRequest $request){
+        if ($request->hasFile('image')) {
+            $image_path = $request->image->store('market_products', 'public');
+            $request->merge(['image_path' => $image_path]);
+        }
         Market_product::create($request->all());
         return redirect()->route('market-products.index')->with(['success' => 'آیتم با موفقیت ایجاد شد']);
     }
@@ -44,6 +49,11 @@ class MarketProductController extends Controller{
 
     public function update(MarketProductRequest $request, $id){
         $data = Market_product::findOrFail($id);
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($data->image_path);
+            $image_path = $request->image->store('market_products', 'public');
+            $request->merge(['image_path' => $image_path]);
+        }
         $input = $request->all();
         $data->fill($input)->save();
         return redirect()->route('market-products.index')->with(['success' => 'آیتم با موفقیت ویرایش شد']);

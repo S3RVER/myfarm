@@ -8,7 +8,7 @@ class Market_product extends Model{
 
     protected $fillable = [
         'title',
-        'image',
+        'image_path',
         'price',
         'description',
         'external_link',

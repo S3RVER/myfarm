@@ -13,7 +13,7 @@
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <div class="form-wrap">
-                            {{Form::open(['route' => 'market-products.store','method' => 'post', 'class' => 'form-horizontal'])}}
+                            {{Form::open(['route' => 'market-products.store','method' => 'post', 'class' => 'form-horizontal','files' => true])}}
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="title" class="col-sm-3 control-label">
@@ -53,6 +53,14 @@
                                     </label>
                                     <div class="col-sm-9">
                                         {{Form::select('category_id', $select, null, ['placeholder' => 'انتخاب ...'])}}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subtitle" class="col-sm-3 control-label">
+                                        <span>عکس</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        {{Form::file('image')}}
                                     </div>
                                 </div>
                                 <div class="form-group">

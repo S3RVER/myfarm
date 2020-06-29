@@ -13,7 +13,7 @@
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <div class="form-wrap">
-                            {{Form::open(['route' => ['market-products.update', $data->id],'method' => 'put', 'class' => 'form-horizontal'])}}
+                            {{Form::open(['route' => ['market-products.update',$data->id],'method' => 'put','class' => 'form-horizontal','files' => true])}}
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="title" class="col-sm-3 control-label">
@@ -55,6 +55,24 @@
                                         {{Form::select('category_id', $select, $data->category_id, ['placeholder' => 'انتخاب ...'])}}
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="subtitle" class="col-sm-3 control-label">
+                                        <span>عکس</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        {{Form::file('image')}}
+                                    </div>
+                                </div>
+                                @if ($data->image_path)
+                                    <div class="form-group">
+                                        <label for="subtitle" class="col-sm-3 control-label">
+                                            <span>عکس</span>
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <img style="max-height: 200px" src="{{asset('storage/'.$data->image_path)}}">
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     {{Form::submit('ذخیره', ['class' => 'btn btn-success'])}}
                                 </div>

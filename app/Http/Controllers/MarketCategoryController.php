@@ -18,7 +18,7 @@ class MarketCategoryController extends Controller{
     }
 
     public function store(MarketCategoryRequest $request){
-        if ($request->image) {
+        if ($request->hasFile('image')) {
             $image_path = $request->image->store('market_categories','public');
             $request->merge(['image_path' => $image_path]);
         }
@@ -38,9 +38,9 @@ class MarketCategoryController extends Controller{
 
     public function update(MarketCategoryRequest $request, $id){
         $data = Market_category::findOrFail($id);
-        if ($request->image) {
-            Storage::delete($data->image_path);
-            $image_path = $request->image->store('public/market_categories');
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($data->image_path);
+            $image_path = $request->image->store('market_categories','public');
             $request->merge(['image_path' => $image_path]);
         }
         $input = $request->all();
