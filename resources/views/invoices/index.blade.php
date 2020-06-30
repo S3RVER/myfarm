@@ -1,6 +1,23 @@
 @extends('layouts.app', ['title' => 'سفارشات فروشگاه', 'heading' => 'سفارشات فروشگاه'])
 @section('content')
     @include('layouts.message')
+{{--    <div class="row">--}}
+{{--        <div class="col-sm-12">--}}
+{{--            <div class="panel panel-default card-view">--}}
+{{--                <div class="panel-heading">--}}
+{{--                    <div class="pull-left">--}}
+{{--                        <h6 class="panel-title txt-dark">عملیات</h6>--}}
+{{--                    </div>--}}
+{{--                    <div class="clearfix"></div>--}}
+{{--                </div>--}}
+{{--                <div class="panel-wrapper">--}}
+{{--                    <div class="panel-body">--}}
+{{--                        <a href="{{route('invoices.create')}}" class="btn btn-success btn-outline btn-icon right-icon"><i class="fa fa-plus" aria-hidden="true"></i><span>اضافه کردن</span></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-default card-view">
@@ -38,7 +55,7 @@
                                             <td></td>
                                             <td></td>
                                             <td>
-{{--                                                <a href="{{route('invoices.edit', $value->id)}}">ویرایش</a>--}}
+                                                <a href="{{route('invoices.edit', $value->id)}}">ویرایش</a>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -14,5 +14,5 @@ Route::middleware(['auth','checkPermission'])->group(function () {
     Route::resource('/rbac', 'RolesController');
     Route::get('/computational_recommendations', 'ComputationalRecommendationsController@index')->name('computational_recommendations.index');
     Route::resource('/categories', 'CategoryController');
-
+    Route::resource('/faq', 'FaqController');
 });

@@ -110,7 +110,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('faq.index')}}">
                     <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
                         <span class="right-nav-text">مطالب پرسش و پاسخ ها</span>
                     </div>

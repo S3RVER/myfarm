@@ -3,15 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Kalnoy\Nestedset\NodeTrait;
 
-class Category extends Model{
-
-    use NodeTrait;
-
+class Item extends Model{
     protected $fillable = [
         'title',
-        'alias'
+        'content',
+        'is_list',
+        'category_id'
     ];
-
 }
