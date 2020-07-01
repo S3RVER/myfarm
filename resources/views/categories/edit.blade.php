@@ -42,28 +42,30 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-default card-view">
-                <div class="panel-heading">
-                    <div class="pull-left">
-                        <h6 class="panel-title text-danger">حذف کردن</h6>
+    @if ($data->system == false)
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default card-view">
+                    <div class="panel-heading">
+                        <div class="pull-left">
+                            <h6 class="panel-title text-danger">حذف کردن</h6>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="panel-wrapper">
-                    <div class="panel-body">
-                        <div class="form-wrap">
-                            {{Form::open(['route' => ['categories.destroy', $data->id], 'method' => 'delete'])}}
-                            <button class="btn btn-danger btn-lable-wrap right-label">
-                                <span class="btn-label"><i class="fa fa-exclamation-triangle"></i></span>
-                                <span class="btn-text">حذف</span>
-                            </button>
-                            {{Form::close()}}
+                    <div class="panel-wrapper">
+                        <div class="panel-body">
+                            <div class="form-wrap">
+                                {{Form::open(['route' => ['categories.destroy', $data->id], 'method' => 'delete'])}}
+                                <button class="btn btn-danger btn-lable-wrap right-label">
+                                    <span class="btn-label"><i class="fa fa-exclamation-triangle"></i></span>
+                                    <span class="btn-text">حذف</span>
+                                </button>
+                                {{Form::close()}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 @endsection

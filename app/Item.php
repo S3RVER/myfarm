@@ -11,4 +11,8 @@ class Item extends Model{
         'is_list',
         'category_id'
     ];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'اضافه کردن مطلب پرس و پاسخ', 'heading' => 'مطالب پرسش و پاسخ ها'])
+@extends('layouts.app', ['title' => 'اضافه کردن مطلب پرس و پاسخ', 'heading' => 'مطالب پرسش و پاسخ'])
 @section('content')
     @include('layouts.message')
     <div class="row">
@@ -13,7 +13,7 @@
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <div class="form-wrap">
-                        {{Form::open(['route' => 'faq.store', 'method' => 'post','class' => 'form-horizontal',])}}
+                        {{Form::open(['route' => 'faq.store', 'method' => 'post','class' => 'form-horizontal'])}}
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="title" class="col-sm-3 control-label">

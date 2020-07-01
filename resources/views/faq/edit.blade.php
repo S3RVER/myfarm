@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'ویرایش مطلب پرس و پاسخ', 'heading' => 'مطالب پرسش و پاسخ ها'])
+@extends('layouts.app', ['title' => 'ویرایش مطلب پرس و پاسخ', 'heading' => 'مطالب پرسش و پاسخ'])
 @section('content')
     @include('layouts.message')
     <div class="row">

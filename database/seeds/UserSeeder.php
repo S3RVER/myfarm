@@ -15,5 +15,10 @@ class UserSeeder extends Seeder
             'mobile' => '09123517072',
             'password' => bcrypt('123'),
         ]);
+
+        \App\User::query()->truncate()->create([
+            'mobile' => '09120778462',
+            'password' => bcrypt('123'),
+        ]);
     }
 }

@@ -72,7 +72,7 @@
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <div class="form-wrap">
-                            {{Form::open(['route' => ['users.destroy', $data->id], 'method' => 'delete'])}}
+                            {{Form::open(['route' => ['market-categories.destroy', $data->id], 'method' => 'delete'])}}
                             <button class="btn btn-danger btn-lable-wrap right-label">
                                 <span class="btn-label"><i class="fa fa-exclamation-triangle"></i></span>
                                 <span class="btn-text">حذف</span>
