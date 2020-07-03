@@ -9,22 +9,24 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller{
 
+    public function __construct(){
+        View::share('url', $this->urlName());
+    }
+
     public function index(){
-        if (Route::current()->uri === 'personnel') {
-            $data = User::whereHas('roles', function($query){
-                // select system default roles and use the ids
-                $query->whereNotIn('roles.id', [2,3]);
-            })->get();
-        }else{
-            $data = User::whereHas('roles', function($query){
-                // select system default roles and use the ids
-                $query->whereIn('roles.id', [2,3]);
-            })->get();
-        }
+        $data = $this->userSelect();
         return view('users.index', ['data' => $data]);
+    }
+
+    protected function userSelect(){
+        return User::whereHas('roles', function($query){
+            // select system default roles and use the ids
+            $query->whereIn('roles.id', [2,3]);
+        })->orderBy('id','desc')->get();
     }
 
     public function create(){
@@ -57,8 +59,7 @@ class UsersController extends Controller{
             $roles[] = ['user_id' => $user->id, 'role_id' => $value];
         }
         Role_users::insert($roles);
-
-        return redirect()->route('users.index')->with(['success' => 'آیتم با موفقیت ایجاد شد']);
+        return $this->redirectTo('آیتم با موفقیت ایجاد شد');
     }
 
     public function show($id){
@@ -88,8 +89,6 @@ class UsersController extends Controller{
 
     public function update(Request $request, $id){
         $request->validate([
-            'mobile'    => 'required|unique:users,mobile,'.$id,
-            'password'  => 'required',
             'role'      => 'required'
         ]);
 
@@ -121,13 +120,12 @@ class UsersController extends Controller{
             Role_users::insert($role_user);
 //            Cache::forget("user_id_{$id}_abilities");
         }
-
-        return redirect()->route('users.index')->with(['success' => 'آیتم با موفقیت ویرایش شد']);
+        return $this->redirectTo('آیتم با موفقیت ویرایش شد');
     }
 
     public function destroy($id){
         User::find($id)->delete();
-        return redirect()->route('users.index')->with(['success' => 'آیتم با موفقیت حذف شد']);
+        return $this->redirectTo('آیتم با موفقیت حذف شد');
     }
 
     private function check_set_roles_abilities(){
@@ -149,5 +147,13 @@ class UsersController extends Controller{
             $data = true;
         }
         return $data;
+    }
+
+    protected function redirectTo($msg){
+        return redirect()->route('users.index')->with(['success' => $msg]);
+    }
+
+    protected function urlName(){
+        return 'users';
     }
 }

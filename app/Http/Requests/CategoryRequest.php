@@ -12,13 +12,13 @@ class CategoryRequest extends FormRequest{
 
     public function rules(){
         return [
-             'title' => 'required',
+            'title' => 'required',
         ];
     }
 
     public function messages(){
         return [
-             'title.required' => 'عنوان دسته بندی اجباری میباشد',
+            'title.required' => 'عنوان دسته بندی اجباری میباشد',
         ];
     }
 }

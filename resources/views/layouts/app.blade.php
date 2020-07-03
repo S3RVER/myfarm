@@ -23,8 +23,8 @@
             <div class="nav-header pull-left">
                 <div class="logo-wrap">
                     <a href="{{route('home')}}">
-                        <img class="brand-img" src="{{asset('public/logo.png')}}" alt="مزرعه من"/>
-                        <span class="brand-text">پنل کاربری</span>
+{{--                        <img class="brand-img" src="{{asset('public/logo.png')}}" alt="مزرعه من"/>--}}
+                        <span>مزرعه من</span>
                     </a>
                 </div>
             </div>
@@ -34,18 +34,15 @@
         </div>
         <div id="mobile_only_nav" class="mobile-only-nav pull-right">
             <ul class="nav navbar-right top-nav pull-right">
-                <li>
-                    <a id="open_right_sidebar" href="#"><i class="zmdi zmdi-settings top-nav-icon"></i></a>
-                </li>
                 <li class="dropdown auth-drp">
-                    <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
-                    <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-                        <li class="divider"></li>
+                    <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown">
+                        <span class="user-online-status"></span>
+                    </a>
+                    <ul>
                         <li>
                             {{Form::open(['route' => ['logout'], 'method' => 'post'])}}
                                 <button class="btn btn-danger btn-xs">خروج</button>
                             {{Form::close()}}
-{{--                            <a href="{{route('logout')}}"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>--}}
                         </li>
                     </ul>
                 </li>
@@ -118,7 +115,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('general-tips.index')}}">
                     <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
                         <span class="right-nav-text">مطالب توصیه های عمومی</span>
                     </div>
@@ -126,9 +123,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('computational_recommendations.index')}}">
+                <a href="{{route('diseases.index')}}">
                     <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
-                        <span class="right-nav-text">فرم های توصیه های محاسباتی</span>
+                        <span class="right-nav-text">مطالب عمومی بیماری ها</span>
                     </div>
                     <div class="clearfix"></div>
                 </a>
@@ -137,14 +134,6 @@
                 <a href="{{route('categories.index')}}">
                     <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
                         <span class="right-nav-text">دسته بندی مطالب</span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
-                        <span class="right-nav-text">مطالب</span>
                     </div>
                     <div class="clearfix"></div>
                 </a>

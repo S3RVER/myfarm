@@ -12,7 +12,7 @@
                 </div>
                 <div class="panel-wrapper">
                     <div class="panel-body">
-                        <a href="{{route('users.create')}}" class="btn btn-success btn-outline btn-icon right-icon"><i class="fa fa-plus" aria-hidden="true"></i><span>اضافه کردن</span></a>
+                        <a href="{{route($url.'.create')}}" class="btn btn-success btn-outline btn-icon right-icon"><i class="fa fa-plus" aria-hidden="true"></i><span>اضافه کردن</span></a>
                     </div>
                 </div>
             </div>
@@ -51,9 +51,9 @@
                                                 @endforeach
                                             </td>
                                             <td>
-                                                <a class="btn btn-primary btn-xs" href="{{route('users.edit', $value->id)}}">ویرایش</a>
+                                                <a class="btn btn-primary btn-xs" href="{{route($url.'.edit', $value->id)}}">ویرایش</a>
                                                 @if(config('abilities')['users.destroy'] and auth()->id() !== $value->id)
-                                                    {{Form::open(['route' => ['users.destroy', $value->id], 'method' => 'delete'])}}
+                                                    {{Form::open(['route' => [$url.'.destroy', $value->id], 'method' => 'delete'])}}
                                                         <button class="btn btn-danger btn-xs">حذف</button>
                                                     {{Form::close()}}
                                                 @endif

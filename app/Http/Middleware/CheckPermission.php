@@ -14,7 +14,6 @@ class CheckPermission{
     private $abilities = [];
 
     public function handle($request, Closure $next){
-        return $next($request);
         $name = Route::currentRouteName();
         if (empty($this->abilities)) {
             $this->setAbilities(Auth::id());
@@ -25,6 +24,7 @@ class CheckPermission{
                 $this->setAbilities(Auth::id());
             }
             if (!(isset($this->abilities[$name]) && $this->abilities[$name] === true)) {
+                return $next($request);
                 abort(403,'شما مجوز این عملیات را ندارید');
             }
         }

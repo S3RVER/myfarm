@@ -13,7 +13,7 @@
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <div class="form-wrap">
-                            {{Form::open(['route' => 'users.store','method' => 'post', 'class' => 'form-horizontal'])}}
+                            {{Form::open(['route' => $url.'.store','method' => 'post', 'class' => 'form-horizontal'])}}
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="mobile" class="col-sm-3 control-label">

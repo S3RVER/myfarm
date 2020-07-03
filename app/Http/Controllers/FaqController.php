@@ -8,7 +8,7 @@ use App\Http\Requests\FaqRequest;
 class FaqController extends Controller{
 
     public function index(){
-        $data = Faq::where('category_id', 1)->get();
+        $data = Faq::where('category_id', 1)->orderBy('id','desc')->get();
         return view('faq.index', ['data' => $data]);
     }
 
@@ -41,7 +41,7 @@ class FaqController extends Controller{
     }
 
     public function destroy($id){
-        Faq::find($id)->delete();
+        Faq::findOrFail($id)->delete();
         return redirect()->route('faq.index')->with(['success' => 'آیتم با موفقیت حذف شد']);
     }
 }

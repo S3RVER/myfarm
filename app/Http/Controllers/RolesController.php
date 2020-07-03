@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Cache;
 class RolesController extends Controller{
 
     public function index(){
-        $data = Role::all();
+        $data = Role::orderBy('id','desc')->get();
         return view('rbac.index', ['data' => $data]);
     }
 

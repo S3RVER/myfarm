@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class MarketCategoryController extends Controller{
 
     public function index(){
-        $data = Market_category::all();
+        $data = Market_category::orderBy('id','desc')->get();
         return view('market_categories.index', ['data' => $data]);
     }
 

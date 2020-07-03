@@ -27,7 +27,7 @@
                 </div>
                 <div class="panel-wrapper collapse in">
                     <div class="panel-body">
-                        <div id="morris_line_chart" class="morris-chart"></div>
+                        <div id="karbar" class="morris-chart"></div>
                     </div>
                 </div>
             </div>

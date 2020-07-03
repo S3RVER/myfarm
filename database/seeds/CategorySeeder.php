@@ -37,5 +37,11 @@ class CategorySeeder extends Seeder
             'system' => true
         ];
         \App\Category::create($attributes);
+
+        $attributes = [
+            'title' => 'بیماری ها',
+            'system' => true
+        ];
+        \App\Category::create($attributes);
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class MarketProductController extends Controller{
 
     public function index(){
-        $data = Market_product::all();
+        $data = Market_product::orderBy('id','desc')->get();
         return view('market_products.index', ['data' => $data]);
     }
 
