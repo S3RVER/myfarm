@@ -131,9 +131,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('categories.index')}}">
+                <a href="{{route('citrus_c_r.index')}}">
                     <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
-                        <span class="right-nav-text">دسته بندی مطالب</span>
+                        <span class="right-nav-text">توصیه محاسباتی مرکبات</span>
                     </div>
                     <div class="clearfix"></div>
                 </a>
@@ -156,7 +156,7 @@
             <!-- Title -->
             @if(isset($heading))
                 <div class="row heading-bg">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 class="txt-dark">{{$heading}}</h5>
                     </div>
                 </div>

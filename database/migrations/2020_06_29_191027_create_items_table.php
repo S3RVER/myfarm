@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->longText('content')->nullable();
             $table->boolean('is_list')->default(false);
             $table->unsignedBigInteger('category_id')->nullable();
+            $table->string('image_path')->nullable();;
             $table->timestamps();
         });
     }

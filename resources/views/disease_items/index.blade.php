@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'دسته بندی مطالب', 'heading' => 'دسته بندی مطالب'])
+@extends('layouts.app', ['title' => 'مطالب بیماری های عمومی','heading' => 'مطالب بیماری های عمومی - '.$data['self']->title])
 @section('content')
     @include('layouts.message')
     <div class="row">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="panel-wrapper">
                     <div class="panel-body">
-                        <a href="{{route('categories.create')}}" class="btn btn-success btn-outline btn-icon right-icon"><i class="fa fa-plus" aria-hidden="true"></i><span>اضافه کردن</span></a>
+                        <a href="{{route('diseases.items.create',$data['self']->id)}}" class="btn btn-success btn-outline btn-icon right-icon"><i class="fa fa-plus" aria-hidden="true"></i><span>اضافه کردن</span></a>
                     </div>
                 </div>
             </div>
@@ -36,16 +36,18 @@
                                     <tr>
                                         <th>شناسه</th>
                                         <th>عنوان</th>
+                                        <th>دسته بندی</th>
                                         <th>عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($data as $key => $value)
+                                    @foreach($data['items'] as $key => $value)
                                         <tr>
                                             <td>{{$value->id}}</td>
                                             <td>{{$value->title}}</td>
+                                            <td>{{$value->category->title}}</td>
                                             <td>
-                                                <a href="{{route('categories.edit', $value->id)}}" class="btn btn-primary btn-xs">ویرایش</a>
+                                                <a href="{{route('diseases.items.edit',[$data['self']->id,$value->id])}}" class="btn btn-xs btn-primary">ویرایش</a>
                                             </td>
                                         </tr>
                                     @endforeach

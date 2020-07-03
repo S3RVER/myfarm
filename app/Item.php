@@ -9,7 +9,8 @@ class Item extends Model{
         'title',
         'content',
         'is_list',
-        'category_id'
+        'category_id',
+        'image_path'
     ];
 
     public function category(){
