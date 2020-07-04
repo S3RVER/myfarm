@@ -20,10 +20,10 @@ class DiseaseCategoryController extends Controller{
         $category = Category::findOrFail(5);
         $category = $category->children()->create($request->all());
         $sub_categories = [
-            'بیماری ها',
-            'آفت ها',
+            'بیماری',
+            'آفات',
             'کمبود عناصر',
-            'نماتود'
+            'علف هرز'
         ];
         foreach ($sub_categories as $key => $value) {
             $category->children()->create(['title' => $value]);

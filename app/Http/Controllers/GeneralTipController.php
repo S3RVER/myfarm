@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Item as General_tip;
 use App\Http\Requests\GeneralTipRequest;
+use Illuminate\Support\Facades\Storage;
 
 class GeneralTipController extends Controller{
 
@@ -35,6 +36,12 @@ class GeneralTipController extends Controller{
         }
         $content = serialize(array_values($content));
         $request->merge(['content' => $content, 'is_list' => true]);
+
+        if ($request->hasFile('image')) {
+            $image_path = $request->image->store('general_tips','public');
+            $request->merge(['image_path' => $image_path]);
+        }
+
         General_tip::create($request->all());
         return redirect()->route('general-tips.index')->with(['success' => 'آیتم با موفقیت ایجاد شد']);
     }
@@ -71,6 +78,13 @@ class GeneralTipController extends Controller{
         }
         $content = serialize(array_values($content));
         $request->merge(['content' => $content, 'is_list' => true]);
+
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($data->image_path);
+            $image_path = $request->image->store('general_tips', 'public');
+            $request->merge(['image_path' => $image_path]);
+        }
+
         $input = $request->all();
         $data->fill($input)->save();
         return redirect()->route('general-tips.index')->with(['success' => 'آیتم با موفقیت ویرایش شد']);

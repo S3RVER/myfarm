@@ -13,7 +13,7 @@
                 <div class="panel-wrapper">
                     <div class="panel-body">
                         <div class="form-wrap">
-                            {{Form::open(['route' => 'general-tips.store', 'method' => 'post','class' => 'form-horizontal'])}}
+                            {{Form::open(['route' => 'general-tips.store', 'method' => 'post','class' => 'form-horizontal','files'=>true])}}
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="title" class="col-sm-3 control-label">
@@ -31,6 +31,15 @@
                                         {{Form::select('category_id', $select, null,['placeholder' => 'انتخاب...','class' => 'form-control'])}}
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="image" class="col-sm-3 control-label">
+                                        <span>عکس</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        {{Form::file('image')}}
+                                    </div>
+                                </div>
+
 
 
                                 <style>
