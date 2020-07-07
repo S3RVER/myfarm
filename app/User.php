@@ -10,7 +10,10 @@ class User extends Authenticatable{
     use Notifiable;
 
     protected $fillable = [
-        'mobile', 'password',
+        'mobile',
+        'password',
+        'first_name',
+        'last_name'
     ];
 
     protected $hidden = [

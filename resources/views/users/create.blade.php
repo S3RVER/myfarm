@@ -32,6 +32,22 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="first_name" class="col-sm-3 control-label">
+                                        <span>نام</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        {{Form::text('first_name', null, ['class' => 'form-control'])}}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="col-sm-3 control-label">
+                                        <span>نام خانوادگی</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        {{Form::text('last_name', null, ['class' => 'form-control'])}}
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-sm-3 control-label">
                                         <span>نقش ها<span class="text-danger">*</span></span>
                                     </label>

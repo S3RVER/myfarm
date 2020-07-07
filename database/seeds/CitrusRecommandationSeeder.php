@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CitrusNitrogenFertilizerSeeder extends Seeder
+class CitrusRecommandationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,13 +22,13 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_between_1_and_2_bio'   => 14,
                 'oc_more_than_2_bio'       => 14,
 
-                'p_less_than_5'         => 0,
-                'p_between_5_and_10'    => 0,
-                'p_between_10_and_15'   => 0,
+                'p_less_than_5'         => 10,
+                'p_between_5_and_10'    => 5,
+                'p_between_10_and_15'   => 3,
 
-                'k_less_than_150'       => 0,
-                'k_between_150_and_250' => 0,
-                'k_between_250_and_300' => 0,
+                'k_less_than_150'       => 50,
+                'k_between_150_and_250' => 40,
+                'k_between_250_and_300' => 5
             ],
             [
                 'tree_age'          => 2,
@@ -39,6 +39,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 30,
                 'oc_between_1_and_2_bio'   => 30,
                 'oc_more_than_2_bio'       => 30,
+
+                'p_less_than_5'         => 16,
+                'p_between_5_and_10'    => 10,
+                'p_between_10_and_15'   => 8,
+
+                'k_less_than_150'       => 100,
+                'k_between_150_and_250' => 75,
+                'k_between_250_and_300' => 50
             ],
             [
                 'tree_age'          => 3,
@@ -49,6 +57,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 40,
                 'oc_between_1_and_2_bio'   => 40,
                 'oc_more_than_2_bio'       => 40,
+
+                'p_less_than_5'         => 20,
+                'p_between_5_and_10'    => 14,
+                'p_between_10_and_15'   => 10,
+
+                'k_less_than_150'       => 150,
+                'k_between_150_and_250' => 100,
+                'k_between_250_and_300' => 75,
             ],
             [
                 'tree_age'          => 4,
@@ -59,16 +75,32 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 45,
                 'oc_between_1_and_2_bio'   => 40,
                 'oc_more_than_2_bio'       => 35,
+
+                'p_less_than_5'         => 30,
+                'p_between_5_and_10'    => 20,
+                'p_between_10_and_15'   => 12,
+
+                'k_less_than_150'       => 200,
+                'k_between_150_and_250' => 150,
+                'k_between_250_and_300' => 100,
             ],
             [
                 'tree_age'          => 5,
                 'oc_less_than_1'       => 70,
                 'oc_between_1_and_2'   => 65,
-                'oc_more_than_2'       => 50,
+                'oc_more_than_2'       => 60,
 
                 'oc_less_than_1_bio'       => 49,
                 'oc_between_1_and_2_bio'   => 47,
                 'oc_more_than_2_bio'       => 45,
+
+                'p_less_than_5'         => 36,
+                'p_between_5_and_10'    => 26,
+                'p_between_10_and_15'   => 14,
+
+                'k_less_than_150'       => 250,
+                'k_between_150_and_250' => 200,
+                'k_between_250_and_300' => 120,
             ],
             [
                 'tree_age'          => 6,
@@ -79,6 +111,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 56,
                 'oc_between_1_and_2_bio'   => 52,
                 'oc_more_than_2_bio'       => 49,
+
+                'p_less_than_5'         => 40,
+                'p_between_5_and_10'    => 30,
+                'p_between_10_and_15'   => 18,
+
+                'k_less_than_150'       => 300,
+                'k_between_150_and_250' => 250,
+                'k_between_250_and_300' => 150,
             ],
             [
                 'tree_age'          => 7,
@@ -89,6 +129,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 63,
                 'oc_between_1_and_2_bio'   => 58,
                 'oc_more_than_2_bio'       => 56,
+
+                'p_less_than_5'         => 46,
+                'p_between_5_and_10'    => 34,
+                'p_between_10_and_15'   => 20,
+
+                'k_less_than_150'       => 400,
+                'k_between_150_and_250' => 300,
+                'k_between_250_and_300' => 175,
             ],
             [
                 'tree_age'          => 8,
@@ -99,6 +147,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 70,
                 'oc_between_1_and_2_bio'   => 67,
                 'oc_more_than_2_bio'       => 63,
+
+                'p_less_than_5'         => 50,
+                'p_between_5_and_10'    => 40,
+                'p_between_10_and_15'   => 24,
+
+                'k_less_than_150'       => 450,
+                'k_between_150_and_250' => 350,
+                'k_between_250_and_300' => 200,
             ],
             [
                 'tree_age'          => 9,
@@ -109,6 +165,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 77,
                 'oc_between_1_and_2_bio'   => 74,
                 'oc_more_than_2_bio'       => 70,
+
+                'p_less_than_5'         => 56,
+                'p_between_5_and_10'    => 40,
+                'p_between_10_and_15'   => 26,
+
+                'k_less_than_150'       => 500,
+                'k_between_150_and_250' => 350,
+                'k_between_250_and_300' => 250,
             ],
             [
                 'tree_age'          => 10,
@@ -119,6 +183,14 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 84,
                 'oc_between_1_and_2_bio'   => 81,
                 'oc_more_than_2_bio'       => 77,
+
+                'p_less_than_5'         => 60,
+                'p_between_5_and_10'    => 46,
+                'p_between_10_and_15'   => 30,
+
+                'k_less_than_150'       => 600,
+                'k_between_150_and_250' => 400,
+                'k_between_250_and_300' => 275,
             ],
             [
                 'tree_age'          => 11,
@@ -129,8 +201,16 @@ class CitrusNitrogenFertilizerSeeder extends Seeder
                 'oc_less_than_1_bio'       => 98,
                 'oc_between_1_and_2_bio'   => 91,
                 'oc_more_than_2_bio'       => 84,
+
+                'p_less_than_5'         => 66,
+                'p_between_5_and_10'    => 50,
+                'p_between_10_and_15'   => 34,
+
+                'k_less_than_150'       => 700,
+                'k_between_150_and_250' => 450,
+                'k_between_250_and_300' => 300,
             ],
         ];
-        \App\Citrus_nitrogen_fertilizer::insert($insert);
+        \App\Citrus_recommandation::insert($insert);
     }
 }

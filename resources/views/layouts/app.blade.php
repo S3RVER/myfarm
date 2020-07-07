@@ -138,6 +138,14 @@
                     <div class="clearfix"></div>
                 </a>
             </li>
+            <li>
+                <a href="">
+                    <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
+                        <span class="right-nav-text">توصیه محاسباتی زراعی</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
             <li><hr class="light-grey-hr mb-10"/></li>
         </ul>
     </div>
