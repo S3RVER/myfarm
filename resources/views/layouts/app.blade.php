@@ -139,7 +139,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="{{route('crops.index')}}">
                     <div class="pull-left"><i class="zmdi zmdi-book mr-20"></i>
                         <span class="right-nav-text">توصیه محاسباتی زراعی</span>
                     </div>

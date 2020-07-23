@@ -18,21 +18,61 @@
                                 <table class="table data-table table-hover display pb-30">
                                     <thead>
                                     <tr>
-                                        <th>سن درخت</th>
-                                        <th>میزان مصرف کود نیتروژن خالص</th>
-                                        <th>میزان مصرف کود کشاورزی زیستی</th>
-                                        <th>میزان مصرف فسفر خالص</th>
-                                        <th>میزان مصرف پتاس خالص</th>
+                                        <th>عنوان</th>
+                                        <th>مقدار</th>
+                                        <th>قیمت</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>{{(session('data')['tree_age']) ? session('data')['tree_age'].' سال' : null}}</td>
-                                            <td>{{(session('data')['nitrogen_fertilizer']) ? session('data')['nitrogen_fertilizer'].' کیلوگرم' : null}}</td>
-                                            <td>{{(session('data')['nitrogen_fertilizer_bio']) ? session('data')['nitrogen_fertilizer_bio'].' کیلوگرم + یک بسته ازتوبارور' : null}}</td>
-                                            <td>{{(session('data')['phosphorus']) ? session('data')['phosphorus'].' کیلوگرم' : null}}</td>
-                                            <td>{{(session('data')['potash']) ? session('data')['potash'].' کیلوگرم' : null}}</td>
-                                        </tr>
+                                        @if (session('data')['tree_age'])
+                                            <tr>
+                                                <td>سن درخت</td>
+                                                <td>{{session('data')['tree_age'].' سال'}}</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                        @if (session('data')['nitrogen'])
+                                            <tr>
+                                                <td>اوره</td>
+                                                <td>{{session('data')['nitrogen']}} کیلوگرم</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                        @if (session('data')['nitrogen_bio'])
+                                            <tr>
+                                                <td>اوره (کشاورزی زیستی)</td>
+                                                <td>{{session('data')['nitrogen_bio']}} کیلوگرم + یک بسته ازتوبارور</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                        @if (session('data')['phosphorus'])
+                                            <tr>
+                                                <td>سوپر فسفات تریپل</td>
+                                                <td>{{session('data')['phosphorus']}} کیلوگرم</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                        @if (session('data')['phosphorus_bio'])
+                                            <tr>
+                                                <td>سوپر فسفات تریپل (کشاورزی زیستی)</td>
+                                                <td>{{session('data')['phosphorus_bio']}} کیلوگرم + یک بسته فسفاته بارور</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                        @if (session('data')['potash'])
+                                            <tr>
+                                                <td>سولفات پتاسیم</td>
+                                                <td>{{session('data')['potash']}} کیلوگرم</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
+                                        @if (session('data')['potash_bio'])
+                                            <tr>
+                                                <td>سولفات پتاسیم (کشاورزی زیستی)</td>
+                                                <td>{{session('data')['potash_bio']}} کیلوگرم + یک بسته پتا بارور</td>
+                                                <td></td>
+                                            </tr>
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
@@ -54,7 +94,7 @@
                 </div>
                 <div class="panel-wrapper">
                     <div class="panel-body">
-                        <a href="" class="btn btn-success btn-outline btn-icon right-icon"><span>فرمول توصیه محاسباتی</span></a>
+                        <a href="{{route('citrus_c_r.edit')}}" class="btn btn-success btn-outline btn-icon right-icon"><span>ویرایش مقادیر توصیه محاسباتی</span></a>
                     </div>
                 </div>
             </div>
@@ -82,11 +122,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="organic_material" class="col-sm-3 control-label">
+                                    <label for="nitrogen" class="col-sm-3 control-label">
                                         <span>مواد آلی</span>
                                     </label>
                                     <div class="col-sm-9">
-                                        {{Form::text('organic_material', null, ['class' => 'form-control'])}}
+                                        {{Form::text('nitrogen', null, ['class' => 'form-control'])}}
                                     </div>
                                 </div>
                                 <div class="form-group">

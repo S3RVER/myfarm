@@ -14,6 +14,14 @@ class Invoice extends Model{
     ];
 
     public function address(){
-        return $this->hasOne(Address::class);
+        return $this->belongsTo(Market_address::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function products(){
+        return $this->hasMany(Invoice_products::class);
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'توصیه های محاسباتی', 'heading' => 'توصیه های محاسباتی'])
+@extends('layouts.app', ['title' => 'محصولات زراعی - توصیه محاسباتی', 'heading' => 'محصولات زراعی - توصیه محاسباتی'])
 @section('content')
     @include('layouts.message')
     <div class="row">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="panel-wrapper">
                     <div class="panel-body">
-                        <a href="" class="btn btn-success btn-outline btn-icon right-icon"><span>فرمول توصیه محاسباتی</span></a>
+                        <a href="{{route('crops.create')}}" class="btn btn-success btn-outline btn-icon right-icon"><i class="fa fa-plus" aria-hidden="true"></i><span>اضافه کردن</span></a>
                     </div>
                 </div>
             </div>
@@ -35,18 +35,19 @@
                                     <thead>
                                     <tr>
                                         <th>شناسه</th>
-                                        <th>نام کاربری</th>
-                                        <th>تاریخ ثبت</th>
+                                        <th>نام</th>
                                         <th>عملیات</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $value)
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td>{{$value->id}}</td>
+                                            <td>{{$value->title}}</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-primary" href="{{route('crops.edit', $value->id)}}">ویرایش</a>
+                                                <a class="btn btn-xs btn-primary" href="{{route('crops.recommendations.index', $value->id)}}">محاسبات</a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

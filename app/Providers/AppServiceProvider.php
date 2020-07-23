@@ -29,13 +29,13 @@ class AppServiceProvider extends ServiceProvider
 
         if($this->app->environment('production')) {
             \URL::forceScheme('https');
+        }else{
+            DB::listen(function($query) {
+                Log::info($query->sql,$query->bindings,$query->time);
+            });
         }
 
         $this->requestStandardization();
-
-        DB::listen(function($query) {
-            Log::info($query->sql,$query->bindings,$query->time);
-        });
     }
 
     private function requestStandardization(){

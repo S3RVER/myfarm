@@ -4,10 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Address extends Model
-{
+class Market_address extends Model{
+
     protected $fillable = [
         'user_id',
-        'address'
+        'title',
+        'address',
+        'postal_code',
+        'mobile'
     ];
+
 }
